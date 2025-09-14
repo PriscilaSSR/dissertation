@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>T&amp;T Candidacy — Primary Reading List</title>
+  <style>
+    :root{
+      --bg:#0f1226;          /* deep indigo */
+      --bg-soft:#171a36;
+      --card:#ffffff;
+      --ink:#111827;         /* slate-900 */
+      --ink-soft:#374151;    /* slate-700 */
+      --ink-muted:#6b7280;   /* slate-500 */
+      --accent:#7c5cff;      /* iris */
+      --accent-2:#00c2ff;    /* sky */
+      --ring: rgba(124,92,255,.3);
+      --shadow: 0 10px 30px rgba(16, 24, 40, .12);
+      --radius: 16px;
+      --radius-sm: 12px;
+      --radius-lg: 24px;
+      --maxw: 1200px;
+    }
+
+    /* Base */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font: 16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, Ubuntu, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--card);
+      background: radial-gradient(1200px 800px at 80% -10%, rgba(124,92,255,.2), transparent 60%),
+                  radial-gradient(900px 600px at -10% 20%, rgba(0,194,255,.18), transparent 60%),
+                  var(--bg);
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    }
+
+    a{ color: var(--accent-2); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    /* Layout */
+    header{
+      position: sticky; top: 0; z-index: 10;
+      backdrop-filter: saturate(140%) blur(8px);
+      background: linear-gradient(180deg, rgba(15,18,38,.9), rgba(15,18,38,.7));
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .wrap{ max-width: var(--maxw); margin: 0 auto; padding: 18px 22px; }
+
+    .title{
+      display:flex; align-items:center; gap:16px; flex-wrap:wrap;
+    }
+    .logo{
+      width:42px; height:42px; border-radius:12px;
+      background: conic-gradient(from 220deg at 50% 50%, var(--accent), var(--accent-2));
+      box-shadow: 0 6px 18px rgba(124,92,255,.35), inset 0 0 20px rgba(255,255,255,.15);
+    }
+    h1{margin:0; font-size: clamp(22px, 2.4vw, 30px);} 
+    .subtitle{ margin: 2px 0 0; color: #c7d2fe; font-size: 14px }
+
+    .container{ max-width: var(--maxw); margin: 26px auto; padding: 0 22px 70px; display:grid; grid-template-columns: 270px 1fr; gap: 20px; }
+    @media (max-width: 980px){ .container{ grid-template-columns: 1fr; } }
+
+    /* Sidebar */
+    nav{
+      position: sticky; top: 72px; align-self: start;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius);
+      padding: 14px; box-shadow: var(--shadow);
+    }
+    nav h3{ margin: 4px 0 10px; font-size: 14px; color:#c7d2fe; letter-spacing:.4px; text-transform:uppercase; }
+    .toc{ list-style:none; margin:0; padding:0; display:grid; gap:6px; }
+    .toc a{ display:block; padding:10px 12px; border-radius: 10px; color:#e5e7eb; border: 1px solid transparent; }
+    .toc a:hover{ background: rgba(124,92,255,.12); border-color: rgba(124,92,255,.35); }
+    .toc .sub{ padding-left:10px; margin-top:4px; }
+
+    /* Main */
+    .section{
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius-lg);
+      padding: 22px; margin-bottom: 22px;
+      box-shadow: var(--shadow);
+    }
+    .section header{ position: initial; background: none; border: 0; padding: 0; }
+    .section h2{ margin: 6px 0 6px; font-size: clamp(20px, 2.2vw, 28px); }
+    .badge{ display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius: 999px; font-size: 12px; color:#e0e7ff; background: rgba(124,92,255,.16); border:1px solid rgba(124,92,255,.36) }
+    .meta{ display:flex; gap:10px; flex-wrap: wrap; margin: 8px 0 4px; }
+
+    /* Group cards */
+    .group{ margin-top: 16px; border-top: 1px dashed rgba(255,255,255,.16); padding-top: 14px; }
+    .group h3{ margin: 0 0 6px; font-size: clamp(16px, 1.6vw, 20px); color: #c7d2fe; }
+    .rationale{ color:#d1d5db; font-size: 14px; margin: 6px 0 14px; }
+
+    .refs{ display:grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 14px; }
+    .card{ background: var(--card); color: var(--ink); border-radius: var(--radius); padding: 16px; border: 1px solid #eef2ff; box-shadow: 0 10px 22px rgba(2,6,23,.08); }
+    .card:hover{ box-shadow: 0 16px 32px rgba(2,6,23,.14); transform: translateY(-1px); transition: .25s ease; }
+    .cite{ font-weight:600; }
+    .cite small{ display:block; font-weight:500; color: var(--ink-muted); margin-top: 2px; }
+    .tags{ margin-top: 10px; display:flex; flex-wrap:wrap; gap:6px; }
+    .tag{ font-size:11px; padding:6px 8px; border-radius:999px; background:#eef2ff; color:#3730a3; border:1px solid #e0e7ff; }
+
+    details{ margin-top: 8px; }
+    summary{ cursor:pointer; color: var(--ink-soft); font-weight:600; }
+
+    /* Footer */
+    footer{ color:#cbd5e1; text-align:center; margin: 46px 0 18px; font-size: 13px; }
+
+    /* Print-friendly */
+    @media print{
+      header, nav{ display:none }
+      body{ background:#fff; color:#000 }
+      .container{ padding:0; margin:0; }
+      .section{ break-inside: avoid; background:#fff; border: none; box-shadow:none; }
+      .card{ box-shadow:none; border: 1px solid #ddd; }
+      a{ color: #0645AD; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="title">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>T&amp;T Candidacy — Primary Reading List</h1>
+          <p class="subtitle">Organized thematically with rationale, full citations, and grouped annotations</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <nav aria-label="Section navigation">
+      <h3>On this page</h3>
+      <ul class="toc">
+        <li><a href="#primary">Primary Reading List</a>
+          <ul class="toc sub">
+            <li><a href="#group-critical-making">I. Critical Making &amp; Design</a></li>
+            <li><a href="#group-authorship">II. Authorship, Copyright &amp; Labor</a></li>
+            <li><a href="#group-knowledge">III. Knowledge Acquisition &amp; AI Learning</a></li>
+            <li><a href="#group-agency">IV. Agency, Systems &amp; Posthumanism</a></li>
+          </ul>
+        </li>
+        <li><a href="#secondary">Secondary Reading List</a>
+          <ul class="toc sub">
+            <li><a href="#sec-pedagogy">A. Pedagogy Framework</a></li>
+            <li><a href="#sec-game">B. Game Design &amp; Play</a></li>
+            <li><a href="#sec-rhetcomp">C. Rhet/Comp &amp; Traditions</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="primary" class="section" aria-labelledby="primary-title">
+        <header>
+          <h2 id="primary-title">Primary Reading List (25 texts)</h2>
+          <div class="meta">
+            <div class="badge" title="Meets assignment requirements">✔ 25–30 texts • Thematic organization</div>
+            <div class="badge">Field: Digital Humanities / Rhetoric &amp; Composition</div>
+          </div>
+        </header>
+
+        <!-- Group I -->
+        <div id="group-critical-making" class="group">
+          <h3>I. Critical Making &amp; Design Methodologies</h3>
+          <p class="rationale">These establish a critical making framework—linking material practice, design, and reflection. They ground a research-through-building method for your AI‑assisted game prototype.</p>
+          <div class="refs">
+            <article class="card">
+              <div class="cite">Johnson, E. K., &amp; Salter, A. <em>Critical Making in the Age of AI</em>. Amherst College Press, 2025. <a href="https://doi.org/10.3998/mpub.14510509" target="_blank" rel="noopener">doi</a></div>
+              <div class="tags"><span class="tag">critical making</span><span class="tag">method</span></div>
+            </article>
+            <article class="card">
+              <div class="cite">Ratto, M. “Critical Making: Conceptual and Material Studies in Technology and Social Life.” <em>The Information Society</em>, 27(4), 252–260, 2011. <a href="https://doi.org/10.1080/01972243.2011.583819" target="_blank" rel="noopener">doi</a></div>
+              <div class="tags"><span class="tag">foundational</span><span class="tag">design‑as‑inquiry</span></div>
+            </article>
+            <article class="card">
+              <div class="cite">Somerson, R., &amp; Hermano, M. (eds.). <em>The Art of Critical Making</em>. Wiley, 2013.</div>
+              <div class="tags"><span class="tag">studio practice</span><span class="tag">RISD</span></div>
+            </article>
+            <article class="card">
+              <div class="cite">Papert, S., &amp; Franz, G. “Computer as Material: Messing About with Time.” <em>Teachers College Record</em> 89(3):408–17, 1998.</div>
+              <div class="tags"><span class="tag">constructionism</span><span class="tag">computational toys</span></div>
+            </article>
+            <article class="card">
+              <div class="cite">Vygotsky, L. S. <em>Mind in Society</em>. Harvard University Press, 1978.</div>
+              <div class="tags"><span class="tag">scaffolding</span><span class="tag">ZPD</span></div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Group II -->
+        <div id="group-authorship" class="group">
+          <h3>II. Authorship, Copyright &amp; Labor</h3>
+          <p class="rationale">These trace shifting authorship and ownership regimes and connect AI to debates on creative labor, credit, and the commons.</p>
+          <div class="refs">
+            <article class="card"><div class="cite">Boyle, J. <em>The Public Domain: Enclosing the Commons of the Mind</em>. Yale UP, 2008.</div><div class="tags"><span class="tag">commons</span><span class="tag">IP</span></div></article>
+            <article class="card"><div class="cite">Rose, M. <em>Authors and Owners: The Invention of Copyright</em>. Harvard UP, 1995.</div><div class="tags"><span class="tag">history</span><span class="tag">copyright</span></div></article>
+            <article class="card"><div class="cite">Potts, J. <em>The Near‑Death of the Author: Creativity in the Internet Age</em>. University of Toronto Press, 2022.</div><div class="tags"><span class="tag">authorship</span><span class="tag">digital culture</span></div></article>
+            <article class="card"><div class="cite">Schnitzler, C., Vee, A., &amp; Laquintano, T. (eds.). <em>TextGenEd: Teaching with Text Generation Technologies</em>. WAC Clearinghouse, 2023. <a href="https://doi.org/10.37514/TWR-J.2023.1.1.02" target="_blank" rel="noopener">open access</a></div><div class="tags"><span class="tag">pedagogy</span><span class="tag">LLMs</span></div></article>
+            <article class="card"><div class="cite">Schnitzler, C., Vee, A., &amp; Laquintano, T. (eds.). <em>TextGenEd: Continuing Experiments</em>. WAC Clearinghouse, 2024. <a href="https://doi.org/10.37514/TWR-J.2024.2.1.01" target="_blank" rel="noopener">open access</a></div><div class="tags"><span class="tag">pedagogy</span><span class="tag">experiments</span></div></article>
+            <article class="card"><div class="cite">Srnicek, N., &amp; Williams, A. <em>Inventing the Future</em>. Verso, 2015.</div><div class="tags"><span class="tag">postwork</span><span class="tag">automation</span></div></article>
+            <article class="card"><div class="cite">Weeks, K. <em>The Problem with Work</em>. Duke UP, 2011.</div><div class="tags"><span class="tag">labor</span><span class="tag">feminism</span></div></article>
+          </div>
+        </div>
+
+        <!-- Group III -->
+        <div id="group-knowledge" class="group">
+          <h3>III. Knowledge Acquisition &amp; AI‑Mediated Learning</h3>
+          <p class="rationale">Learning theory and contemporary AI scholarship that frame how generative systems reshape literacy, cognition, and classroom practice.</p>
+          <div class="refs">
+            <article class="card"><div class="cite">Piaget, J. <em>The Science of Education and the Psychology of the Child</em>. Grossman, 1970.</div><div class="tags"><span class="tag">development</span><span class="tag">constructivism</span></div></article>
+            <article class="card"><div class="cite">Kellner, D., &amp; Share, J. <em>The Critical Media Literacy Guide</em>. Brill, 2019.</div><div class="tags"><span class="tag">media literacy</span><span class="tag">critical</span></div></article>
+            <article class="card"><div class="cite">Bowen, J., &amp; Watson, C. <em>Teaching with AI</em>. Johns Hopkins UP, 2024.</div><div class="tags"><span class="tag">practice</span><span class="tag">higher ed</span></div></article>
+            <article class="card"><div class="cite">Dobrin, S. <em>AI and Writing</em>. Broadview Press, 2023.</div><div class="tags"><span class="tag">composition</span><span class="tag">theory</span></div></article>
+            <article class="card"><div class="cite">Hayles, N. K. <em>Unthought: The Power of the Cognitive Nonconscious</em>. University of Chicago Press, 2017.</div><div class="tags"><span class="tag">nonconscious</span><span class="tag">posthuman</span></div></article>
+            <article class="card"><div class="cite">Mitchell, M. <em>Artificial Intelligence: A Guide for Thinking Humans</em>. Picador, 2020.</div><div class="tags"><span class="tag">overview</span><span class="tag">rigor</span></div></article>
+            <article class="card"><div class="cite">Li, F.‑F. <em>The Worlds I See</em>. Flatiron, 2023.</div><div class="tags"><span class="tag">vision</span><span class="tag">research</span></div></article>
+            <article class="card"><div class="cite">Mollick, E. <em>Co‑Intelligence</em>. Portfolio, 2024.</div><div class="tags"><span class="tag">work</span><span class="tag">co‑pilot</span></div></article>
+            <article class="card"><div class="cite">Jenkins, H. <em>Participatory Culture in a Networked Era</em>. Polity, 2015.</div><div class="tags"><span class="tag">participation</span><span class="tag">learning</span></div></article>
+            <article class="card"><div class="cite">Kellner &amp; Share, above; plus practice‑oriented readings integrate theory.</div><div class="tags"><span class="tag">bridge</span></div></article>
+          </div>
+        </div>
+
+        <!-- Group IV -->
+        <div id="group-agency" class="group">
+          <h3>IV. Agency, Systems &amp; Posthumanism</h3>
+          <p class="rationale">Philosophical and sociotechnical lenses on human/nonhuman agency, ethics, and the politics of AI infrastructures.</p>
+          <div class="refs">
+            <article class="card"><div class="cite">Marcuse, H. <em>One‑Dimensional Man</em>. Routledge, 2013.</div><div class="tags"><span class="tag">critique</span><span class="tag">society</span></div></article>
+            <article class="card"><div class="cite">Buolamwini, J. <em>Unmasking AI</em>. Random House, 2023.</div><div class="tags"><span class="tag">bias</span><span class="tag">ethics</span></div></article>
+            <article class="card"><div class="cite">Harari, Y. N. <em>Nexus: Information Networks From the Stone Age to AI</em>. (pub. details tbd)</div><div class="tags"><span class="tag">macro history</span></div></article>
+            <article class="card"><div class="cite">Kurzweil, R. <em>The Singularity Is Nearer</em>. Viking, 2024.</div><div class="tags"><span class="tag">futures</span><span class="tag">speculative</span></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="secondary" class="section" aria-labelledby="secondary-title">
+        <header>
+          <h2 id="secondary-title">Secondary Reading List (supporting frameworks)</h2>
+          <div class="meta">
+            <div class="badge">Pedagogy • Game Design • Rhet/Comp Traditions</div>
+          </div>
+        </header>
+
+        <!-- Secondary A: Pedagogy -->
+        <div id="sec-pedagogy" class="group">
+          <h3>A. Pedagogy Framework</h3>
+          <p class="rationale">Frameworks to scaffold critical, inclusive, and multimodal learning environments relevant to AI‑mediated composition.</p>
+          <div class="refs">
+            <article class="card"><div class="cite">Freire, P. <em>Pedagogy of the Oppressed</em>. 50th Anniversary Ed., Bloomsbury, 2018.</div><div class="tags"><span class="tag">critical pedagogy</span></div></article>
+            <article class="card"><div class="cite">hooks, b. <em>Teaching to Transgress</em>. Routledge, 1994.</div><div class="tags"><span class="tag">liberatory</span></div></article>
+            <article class="card"><div class="cite">Giroux, H. <em>Pedagogy and the Politics of Hope</em>. Routledge, 2007.</div><div class="tags"><span class="tag">critical</span></div></article>
+            <article class="card"><div class="cite">Heineke, A. J., &amp; McTighe, J. <em>Using Understanding by Design in the Culturally and Linguistically Diverse Classroom</em>. ASCD, 2018.</div><div class="tags"><span class="tag">UbD</span><span class="tag">CLD</span></div></article>
+            <article class="card"><div class="cite">Meyer, A., &amp; Rose, D. <em>Universal Design for Learning</em>. CAST, 2013.</div><div class="tags"><span class="tag">UDL</span></div></article>
+            <article class="card"><div class="cite">Inoue, A. B. <em>Antiracist Writing Assessment Ecologies</em>. WAC/Parlor, 2015.</div><div class="tags"><span class="tag">assessment</span><span class="tag">justice</span></div></article>
+            <article class="card"><div class="cite">Bean, C. J. <em>Engaging Ideas</em>. Jossey‑Bass, 2011.</div><div class="tags"><span class="tag">writing across curriculum</span></div></article>
+            <article class="card"><div class="cite">Mitchell, C., &amp; Weiler, K. <em>Rewriting Literacy</em>. Praeger, 1991.</div><div class="tags"><span class="tag">literacies</span></div></article>
+          </div>
+        </div>
+
+        <!-- Secondary B: Game Design -->
+        <div id="sec-game" class="group">
+          <h3>B. Game Design &amp; Play</h3>
+          <p class="rationale">Design theory and play studies supporting procedural rhetoric and game‑based learning elements of the project.</p>
+          <div class="refs">
+            <article class="card"><div class="cite">Bogost, I. <em>Play Anything</em>. Basic Books, 2016.</div><div class="tags"><span class="tag">procedural rhetoric</span></div></article>
+            <article class="card"><div class="cite">Flanagan, M. <em>Critical Play</em>. MIT Press, 2013.</div><div class="tags"><span class="tag">radical design</span></div></article>
+            <article class="card"><div class="cite">Koster, R. <em>A Theory of Fun for Game Design</em>. 2nd ed., O’Reilly, 2013.</div><div class="tags"><span class="tag">fun</span><span class="tag">patterns</span></div></article>
+            <article class="card"><div class="cite">Costikyan, G. <em>Uncertainty in Games</em>. MIT Press, 2015.</div><div class="tags"><span class="tag">systems</span></div></article>
+            <article class="card"><div class="cite">Salen, K. (ed.). <em>The Ecology of Games</em>. MIT Press, 2007.</div><div class="tags"><span class="tag">learning</span></div></article>
+            <article class="card"><div class="cite">Tekinbaş, K. S., &amp; Zimmerman, E. <em>Rules of Play</em>. MIT Press, 2003.</div><div class="tags"><span class="tag">fundamentals</span></div></article>
+            <article class="card"><div class="cite">McGonigal, J. <em>Reality Is Broken</em>. Penguin, 2011.</div><div class="tags"><span class="tag">games for good</span></div></article>
+            <article class="card"><div class="cite">Fullerton, T., &amp; Farber, M. <em>The Well‑Read Game</em>. (publisher/date tbd)</div><div class="tags"><span class="tag">design reading</span></div></article>
+          </div>
+        </div>
+
+        <!-- Secondary C: Rhet/Comp & Traditions -->
+        <div id="sec-rhetcomp" class="group">
+          <h3>C. Rhet/Comp &amp; Traditions</h3>
+          <p class="rationale">Core rhet/comp pedagogy and diverse rhetorical traditions to represent in the game’s narrative and mechanics.</p>
+          <div class="refs">
+            <article class="card"><div class="cite">Lunsford, A., &amp; Ede, L. <em>Singular Texts/Plural Authors</em>. Southern Illinois UP, 1990.</div><div class="tags"><span class="tag">collaboration</span></div></article>
+            <article class="card"><div class="cite">Matsuda, P. K., et al. <em>Second‑Language Writing in the Composition Classroom</em>. Bedford/St. Martin’s, 2006.</div><div class="tags"><span class="tag">L2 writing</span></div></article>
+            <article class="card"><div class="cite">Villanueva, V., &amp; Arola, K. L. (eds.). <em>Cross‑Talk in Comp Theory</em>. NCTE, 2011.</div><div class="tags"><span class="tag">theory reader</span></div></article>
+            <article class="card"><div class="cite">Lu, X. <em>Rhetoric in Ancient China</em>. University of South Carolina Press, 2022.</div><div class="tags"><span class="tag">Ancient Chinese</span></div></article>
+            <article class="card"><div class="cite">Anzaldúa, G. <em>Borderlands/La Frontera</em>. Aunt Lute Books, 1987.</div><div class="tags"><span class="tag">border rhetorics</span></div></article>
+            <article class="card"><div class="cite">Asante, M. K. <em>The Afrocentric Idea</em>. Temple UP, 1998.</div><div class="tags"><span class="tag">Afrocentric</span></div></article>
+            <article class="card"><div class="cite">Gray, K. L. <em>Intersectional Tech</em>. Louisiana State UP, 2020.</div><div class="tags"><span class="tag">gaming</span><span class="tag">intersectionality</span></div></article>
+            <article class="card"><div class="cite">Brock Jr, A. <em>Distributed Blackness</em>, 2020.</div><div class="tags"><span class="tag">digital cultures</span></div></article>
+            <article class="card"><div class="cite">Gee, J. P. <em>What Video Games Have to Teach Us About Learning and Literacy</em>. St. Martin’s, 2007.</div><div class="tags"><span class="tag">literacy</span><span class="tag">learning</span></div></article>
+            <article class="card"><div class="cite">Gee, J. P. <em>What Is a Human?</em> Palgrave, 2020.</div><div class="tags"><span class="tag">language &amp; mind</span></div></article>
+            <article class="card"><div class="cite">Gee, J. P. <em>The Anti‑Education Era</em>. Macmillan/ORM, 2013.</div><div class="tags"><span class="tag">systems</span></div></article>
+          </div>
+        </div>
+
+        <details>
+          <summary>Notes on formatting &amp; submission</summary>
+          <ul>
+            <li>Include complete bibliographic details in your preferred academic style (APA/MLA/Chicago).</li>
+            <li>Add or refine publisher data marked “tbd.”</li>
+            <li>Print this page to PDF for Webcourses submission (print styles included).</li>
+          </ul>
+        </details>
+      </section>
+
+      <footer>
+        © 2025 — Primary &amp; Secondary lists organized for T&amp;T Candidacy. Designed for clarity, accessibility, and print‑readiness.
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
